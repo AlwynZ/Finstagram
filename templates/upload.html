@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Finstagram</title>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <div>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="text" name="caption" placeholder="Caption" required />
+
+            <input type="file" name="imageToUpload" accept="image/*">
+            <br />            
+
+            <br />
+            Do you want this image to be visible to all followers?<br>
+            <input type="radio" name="options" value="Yes" required />Yes
+            <br>
+            <input type="radio" name="options" value="No" checked="checked" />No
+            <br>
+            <input type="submit" value="Upload Image">
+            </form>
+    </div>
+    {% if message %}
+    {{ message }}
+    {% endif %}
+    <br />
+    <a href="/home">Home</a>
+</body>
+</html>

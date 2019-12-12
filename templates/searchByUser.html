@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Finstagram</title>
+</head>
+<body>
+    <h1>Search by Username </h1>
+    <form action="/searchByUser" method="post" enctype="multipart/form-data" >
+        <input type="text" name="username" placeholder="username" required />
+        <input type="submit" name="submit" />
+    </form>
+
+    {% if message %}
+    {{ message }}
+    {% endif %}
+
+    <a href="/home">Back</a>
+</body>
+</html>

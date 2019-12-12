@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Finstagram</title>
+</head>
+<body>
+    <h1>Follow Requests Received</h1>
+    <div>
+        <style type="text/css">
+            table, th, td {
+                border: 1px solid black;
+            }
+        </style>
+        <table>
+            <th>Requester Username</th>
+                {% for entry in requests %}
+                <tr>
+                    <td>{{entry.username_follower}}</td>
+		    <td><a href="/followRequest/{{entry.username_follower}}/accept">Accept</a></td>
+		    <td><a href="/followRequest/{{entry.username_follower}}/decline">Decline</a></td>
+                </tr>
+            	{% endfor %}
+
+        </table>
+    </div>
+    <h1></h1>
+    <a href="/home">Home</a>
+</body>
+</html>

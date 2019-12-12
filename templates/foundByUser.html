@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Finstagram</title>
+</head>
+<body>
+    <h1>Images Found: </h1>
+    <div>
+        <style type="text/css">
+            table, th, td {
+                border: 1px solid black;
+            }
+        </style>
+        <table>
+            <th>timestamp</th>
+            <th>photoID</th>
+            <th></th>
+
+            {% for image in photos %}
+            <tr>
+                <td>{{image.postingdate}}</td>
+                <td>{{image.photoID}}</td>
+                <td><a href="/image/{{image.photoID}}">View Image</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <a href="/home">Home</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Finstagram</title>
+</head>
+<body>
+
+    {% if message %}
+    {{ message }}
+    {% endif %}
+    {% for p in photo %}
+
+<form action="/tag/{{p.photoID}}" method="post" enctype="multipart/form-data" >
+    {% endfor %}
+        <p>Enter usernames of all users you wish to tag separated by a single space. Leave empty for no tags.</p>
+        <input type="text" name="username" placeholder="username" />
+        <input type="submit" value="Confirm" >
+    </form>
+
+
+    <a href="/home">Home</a>
+</body>
+</html>

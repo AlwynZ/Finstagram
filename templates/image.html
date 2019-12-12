@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Finstagram</title>
+</head>
+<body>
+        {% for image in photo%}
+        <h1>Image Name: {{image.filepath}}</h1>
+        <h2>Posted by: {{image.photoPoster}}</h2>
+    
+    
+        <img src="../images/{{image.filepath}}" alt="Failed to show image"><br>
+        <font size= 14>Caption: {{image.caption}}</font>
+        <p>Poster Name: {{image.firstName}} {{image.lastName}}</p>
+        <p>image ID: {{image.photoID}}</p>
+    
+        <p>Date posted: {{image.postingdate}}</p>
+    
+        <style type="text/css">
+            table, th, td {
+                border: 1px solid black;
+            }
+
+        </style>
+        
+        <p>People tagged in this picture: </p>
+        <table>
+            <th>username</th>
+            <th>first name</th>
+            <th>last name</th>
+    
+            {% for tag in tags %}
+            <tr>
+                <td>{{tag.username}}</td>
+                <td>{{tag.firstName}}</td>
+                <td>{{tag.lastName}}</td>
+            </tr>
+    
+            {% endfor %}
+        </table>
+        {% endfor %}
+        </br>
+        </br>
+        <a href="/feed">Back to Feed</a>
+    </br>
+        <a href="/home">Home</a>
+    </body>
+    </html>

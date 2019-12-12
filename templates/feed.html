@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Your Finsta Feed</title>
+</head>
+<body>
+        <h1>Your Finsta Feed</h1>
+    <div>
+        <style type="text/css">
+            table, th, td {
+                border: 1px solid black;
+            }
+        </style>
+        <table>
+            <th>PhotoId</th>
+            <th>Posted By</th>
+            <th>Photo Name</th>
+            <th></th>
+
+
+                {% for image in photos %}
+                <tr>
+                    <td>{{image.photoID}}</td>
+                    <td>{{image.photoPoster}}</td>
+                    <td>{{image.filepath}}</td>
+                    <td><a href="/image/{{image.photoID}}">View Image</a></td>
+
+                </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+    <a href="/home">Home</a>
+</body>
+</html>

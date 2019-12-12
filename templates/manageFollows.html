@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Finstagram</title>
+</head>
+<body>
+    <h1>People you are following</h1>
+    <div>
+        <style type="text/css">
+            table, th, td {
+                border: 1px solid black;
+            }
+        </style>
+        <table>
+            <th>username</th>
+                {% for entry in follow %}
+                <tr>
+                    <td>{{entry.username_followed}}</td>
+		    <td><a href="/unfollow/{{entry.username_followed}}">unfollow</a></td>
+                </tr>
+            	{% endfor %}
+
+        </table>
+    </div>
+    <h1></h1>
+    <a href="/home">Home</a>
+</body>
+</html>
